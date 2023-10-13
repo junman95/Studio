@@ -91,6 +91,7 @@ export const HierarchyElement = ({ mesh, depth }: Props) => {
         return primitiveStore.selectedPrimitives;
       },
       (meshes) => {
+        console.log(meshes);
         if (storeId in meshes && !isLocked) {
           setIsMouseUp(true);
         } else {

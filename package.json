@@ -10,12 +10,14 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "chromatic": "npx chromatic --project-token=chpt_6bdda2551a74ea8 --skip"
   },
   "dependencies": {
     "@react-three/drei": "^9.81.0",
     "@react-three/fiber": "^8.13.7",
     "@react-three/postprocessing": "^2.15.1",
+    "@storybook/builder-vite": "^7.4.6",
     "@tanstack/react-query": "^4.33.0",
     "@uiw/color-convert": "^1.4.2",
     "@uiw/react-color": "^1.4.2",
@@ -50,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "chromatic": "^7.3.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
@@ -61,5 +64,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "mx-client@0.0.0"
 }

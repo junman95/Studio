@@ -1,6 +1,7 @@
 import AssetGrid from "@/features/assetLibrary/components/body/assetList/grid/AssetGrid";
 import { useFetchLibraryAssets } from "@/features/assetLibrary/hooks/useFetchLibraryAssets query";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const meta = {
   component: AssetGrid,
@@ -19,20 +20,24 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof AssetGrid>;
 
+const queryClient = new QueryClient();
 export const AssetLibraryGrid = {
   decorators: [
     (Story: StoryFn) => {
-      useFetchLibraryAssets({
-        domain: "all",
-        majorCategories: "all",
-        minorCategories: "all",
-        page: 1,
-      });
+      const Component = () => {
+        useFetchLibraryAssets({
+          domain: "all",
+          majorCategories: "all",
+          minorCategories: "all",
+          page: 1,
+        });
 
+        return <Story />;
+      };
       return (
-        <div>
-          <Story />
-        </div>
+        <QueryClientProvider client={queryClient}>
+          <Component />
+        </QueryClientProvider>
       );
     },
   ],

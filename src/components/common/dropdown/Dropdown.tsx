@@ -113,6 +113,7 @@ const Dropdown = ({
     <Container ref={ref} role="dropdown" size={size}>
       <Stack width="100%" border="none">
         <OpenButton
+          role="dropdown-button"
           onClick={() => {
             setOpenList(!openList);
           }}
